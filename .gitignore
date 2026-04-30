@@ -1,0 +1,6 @@
+saved_qwen25vl_7b/
+__pycache__/
+*.pyc
+*.pyo
+submission.csv
+.idea/
