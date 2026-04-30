@@ -3,9 +3,7 @@
 Solves PNG images of deep learning multiple-choice questions using
 **Qwen2.5-VL-7B-Instruct**, a vision-language model with strong OCR and
 reasoning capabilities. A 3-prompt chain-of-thought ensemble with majority
-voting is used; questions where fewer than 2 prompts agree are skipped
-(option 5) to avoid the −0.25 incorrect-answer penalty.
-
+voting is used.
 ---
 
 ## Automated Setup (grading)
@@ -66,3 +64,7 @@ Expected runtime on 48 GB L40s: **~10–15 minutes** for 50 questions.
   https://github.com/QwenLM/Qwen2.5-VL
 - HuggingFace Transformers: https://github.com/huggingface/transformers
 - qwen-vl-utils: https://github.com/QwenLM/qwen-vl-utils
+
+## Honor Code
+
+- Codex coding agent for debugging purposes.
