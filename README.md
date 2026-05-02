@@ -1,4 +1,4 @@
-# GNR638 Project — Deep Learning MCQ Solver
+# Deep Learning MCQ Solver
 
 Solves PNG images of deep learning multiple-choice questions using
 **Qwen2.5-VL-7B-Instruct**, a vision-language model with strong OCR and
@@ -12,23 +12,6 @@ voting is used.
 bash setup.bash          # clones repo, creates env, downloads weights
 conda activate gnr_project_env
 python inference.py --test_dir <absolute_path_to_test_dir>
-```
-
----
-
-## Manual Setup
-
-```bash
-# Create environment
-conda create -n gnr_project_env python=3.11 -y
-conda activate gnr_project_env
-pip install -r requirements.txt
-
-# Download model weights once (internet required, ~16 GB)
-python download_model.py
-
-# Run inference
-python inference.py --test_dir /path/to/test_dir
 ```
 
 ---
