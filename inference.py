@@ -194,7 +194,7 @@ if __name__ == "__main__":
     processor = AutoProcessor.from_pretrained(LOCAL_MODEL_DIR, local_files_only=True)
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
         LOCAL_MODEL_DIR,
-        torch_dtype=torch.bfloat16,
+        torch_dtype=torch.float16,
         device_map="auto",
         local_files_only=True,
     )
