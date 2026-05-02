@@ -1,4 +1,4 @@
-# GNR638 Project — Deep Learning MCQ Solver
+# Deep Learning MCQ Solver
 
 Solves PNG images of deep learning multiple-choice questions using
 **Qwen2.5-VL-7B-Instruct**, a vision-language model with strong OCR and
