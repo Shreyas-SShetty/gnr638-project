@@ -36,7 +36,7 @@ SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
 IMAGE_DIR    = os.path.join(args.test_dir, "images")
 TEST_CSV     = os.path.join(args.test_dir, "test.csv")
 OUTPUT_CSV   = os.path.join(SCRIPT_DIR, "submission.csv")   # always in script dir
-LOCAL_MODEL_DIR = os.path.join(SCRIPT_DIR, "saved_qwen25vl_32b")
+LOCAL_MODEL_DIR = os.path.join(SCRIPT_DIR, "saved_qwen25vl_7b")
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -194,7 +194,7 @@ if __name__ == "__main__":
     processor = AutoProcessor.from_pretrained(LOCAL_MODEL_DIR, local_files_only=True)
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
         LOCAL_MODEL_DIR,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.bfloat16,
         device_map="auto",
         local_files_only=True,
     )
