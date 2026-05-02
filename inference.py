@@ -221,6 +221,8 @@ if __name__ == "__main__":
         })
 
     submission_df = pd.DataFrame(predictions)[["id", "image_name", "option"]]
+    submission_df["_sort_key"] = submission_df["image_name"].str.extract(r'(\d+)$').astype(int)
+    submission_df = submission_df.sort_values("_sort_key").drop(columns="_sort_key").reset_index(drop=True)
     submission_df.to_csv(OUTPUT_CSV, index=False)
     print(f"Saved {OUTPUT_CSV}")
     print(submission_df.to_string(index=False))
