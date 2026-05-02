@@ -36,7 +36,7 @@ SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
 IMAGE_DIR    = os.path.join(args.test_dir, "images")
 TEST_CSV     = os.path.join(args.test_dir, "test.csv")
 OUTPUT_CSV   = os.path.join(SCRIPT_DIR, "submission.csv")   # always in script dir
-LOCAL_MODEL_DIR = os.path.join(SCRIPT_DIR, "saved_qwen25vl_7b")
+LOCAL_MODEL_DIR = os.path.join(SCRIPT_DIR, "saved_qwen25vl_32b")
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -174,7 +174,7 @@ def predict_image(image_path: str) -> int:
     counts = Counter(valid)
     best_pred, best_count = counts.most_common(1)[0]
 
-    # Require majority agreement to avoid -0.25 penalty on uncertain questions
+    # Require majority agreement (at least 2 of 3) to avoid -0.25 penalty
     if best_count < 2:
         return 5
 

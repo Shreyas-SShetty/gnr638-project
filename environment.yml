@@ -12,6 +12,7 @@ dependencies:
       - torchvision>=0.17.0
       - transformers>=4.49.0
       - accelerate>=0.26.0
+      - autoawq>=0.2.5
       - qwen-vl-utils>=0.0.8
       - Pillow>=10.0.0
       - pandas>=2.0.0
